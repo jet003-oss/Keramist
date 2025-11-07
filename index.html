@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>keramist — Məhsullar və Xidmətlər</title>
+  <meta name="description" content="Keramist — yüksək keyfiyyətli keramika məhsulları və fərdi sifariş xidmətləri." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header / Hero -->
+  <header class="hero">
+    <div class="container">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden>
+          <rect x="6" y="6" width="52" height="52" rx="8" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M18 42 L32 18 L46 42 Z" fill="currentColor"/>
+        </svg>
+        <div>
+          <h1>keramist</h1>
+          <p class="subtitle">Zərif keramika — gündəlik istifadəyə və xüsusi hədiyyələrə.</p>
+        </div>
+      </div>
+
+      <nav class="cta-row">
+        <a class="btn primary" href="#products">Məhsullara bax</a>
+        <a class="btn outline" href="#contact">Sifariş et</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <section id="about" class="section container">
+      <h2>Haqqımızda</h2>
+      <p>Keramist — əl işləri ilə hazırlanan, funksional və estetik keramika məhsullarının istehsalçısıdır. Hər bir parça düşünülmüş dizayn və keyfiyyətli emaldan keçir.</p>
+    </section>
+
+    <section id="products" class="section container">
+      <h2>Məhsul kateqoriyaları</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Gündəlik qablar</h3>
+          <p>Çaydan, fincan və boşqablar — gündəlik istifadə üçün rahat və davamlı dizayn.</p>
+        </article>
+        <article class="card">
+          <h3>Dekor parçaları</h3>
+          <p>Məkanınıza şəxsiyyət əlavə edən heykəllər və dekor çənlər.</p>
+        </article>
+        <article class="card">
+          <h3>Xüsusi sifarişlər</h3>
+          <p>Tədbirlərə və hədiyyələrə uyğun fərdiləşdirilmiş sifarişlər.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="features" class="section container">
+      <h2>Niyə Keramist?</h2>
+      <ul class="features">
+        <li><strong>Təmiz materiallar</strong> — ekoloji və sağlam material seçimi.</li>
+        <li><strong>Usta əl işi</strong> — hər parça diqqətlə hazırlanır.</li>
+        <li><strong>Fərdiləşdirmə</strong> — loqo, rəng və ölçü üzrə sifariş qəbul olunur.</li>
+      </ul>
+    </section>
+
+    <section id="pricing" class="section container">
+      <h2>Qiymət nümunələri</h2>
+      <div class="grid">
+        <div class="price-card">
+          <h3>Starter</h3>
+          <p class="price">30 AZN</p>
+          <p>Fincan / kiçik aksesuar</p>
+        </div>
+        <div class="price-card featured">
+          <h3>Popular</h3>
+          <p class="price">70 AZN</p>
+          <p>Çaydan + 2 fincan dəsti</p>
+        </div>
+        <div class="price-card">
+          <h3>Custom</h3>
+          <p class="price">Sifarişə görə</p>
+          <p>Fərdi dizayn və həcmlər</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section container">
+      <h2>Müştəri rəyləri</h2>
+      <p class="muted">“Keyfiyyət mükəmməl idi — hədiyyə kimi verdim və hər kəs bəyəndi.” — Aygün</p>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Əlaqə / Sifariş</h2>
+      <p>Link və ya mesaj vasitəsilə sifariş verə bilərsiniz. Aşağıdakı formanı doldurun və ya birbaşa e-poçt/messencerdən yazın.</p>
+
+      <form id="orderForm" class="form">
+        <input name="name" type="text" placeholder="Adınız" required />
+        <input name="contact" type="text" placeholder="Telefon / Email" required />
+        <select name="product">
+          <option value="">Məhsul seçin...</option>
+          <option value="cup">Fincan</option>
+          <option value="set">Dəst</option>
+          <option value="custom">Xüsusi sifariş</option>
+        </select>
+        <textarea name="note" placeholder="Qısa izah / ölçü və ya rəng tələbi (istəyə bağlı)"></textarea>
+        <div class="form-row">
+          <button class="btn primary" type="submit">Sifarişi göndər</button>
+          <button class="btn outline" type="button" id="demoWhats">WhatsApp ilə yaz</button>
+        </div>
+      </form>
+
+      <p class="hint">Qeyd: Forma hazırda demo rejimindədir — göndərmək üçün server və ya üçüncü tərəf form servisi əlavə etmək lazımdır.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="year"></span> keramist — Bütün hüquqlar qorunur.</small>
+      <nav class="footer-nav">
+        <a href="#about">Haqqımızda</a>
+        <a href="#contact">Əlaqə</a>
+      </nav>
+    </div>
+  </footer>
+
+<script>
+  // Dinamik il
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Form demo: yerli alert və WhatsApp link
+  document.getElementById('orderForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Təşəkkürlər! Sifariş məlumatınız qeyd edildi. Biz tezliklə sizinlə əlaqə saxlayacağıq (demo).');
+    e.target.reset();
+  });
+
+  document.getElementById('demoWhats').addEventListener('click', function(){
+    const text = encodeURIComponent('Salam Keramist, mən sifariş vermək istəyirəm.');
+    // buraya öz WhatsApp nömrəni qoy: +99450xxxxxxx
+    window.open('https://wa.me/+994500000000?text=' + text, '_blank');
+  });
+</script>
+
+</body>
+</html>
