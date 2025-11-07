@@ -1,9 +1,7 @@
-// Sadə animasiya effekti
-window.addEventListener("scroll", () => {
-  document.querySelectorAll("section").forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      section.classList.add("visible");
-    }
-  });
+// Loading ekran animasiyası
+window.addEventListener("load", () => {
+  document.querySelector(".loading-screen").style.opacity = "0";
+  setTimeout(() => {
+    document.querySelector(".loading-screen").style.display = "none";
+  }, 800);
 });
